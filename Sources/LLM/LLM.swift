@@ -312,7 +312,7 @@ open class LLM: ObservableObject {
     }
     
     private var input: String = ""
-    private var isAvailable = true
+    public var isAvailable = true
     
     @InferenceActor
     public func getCompletion(from input: borrowing String) async -> String {
