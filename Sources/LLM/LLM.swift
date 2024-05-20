@@ -559,7 +559,19 @@ public struct Template {
             shouldDropLast: true
         )
     }
-    
+
+    public static func llama3(_ systemPrompt: String? = nil) -> Template {
+        return Template(
+            prefix: "<|begin_of_text|>",
+            system: ("<|start_header_id|>system<|end_header_id|>", "<|eot_id|>"),
+            user: ("<|start_header_id|>user<|end_header_id|>", "<|eot_id|>"),
+            bot: ("<|start_header_id|>assistant<|end_header_id|>", "<|eot_id|>"),
+            stopSequence: "<|eot_id|>",
+            systemPrompt: systemPrompt,
+            shouldDropLast: true
+        )
+    }
+
     public static let mistral = Template(
         user: ("[INST] ", " [/INST]"),
         bot: ("", "</s> "),
