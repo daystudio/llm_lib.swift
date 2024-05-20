@@ -536,7 +536,7 @@ public struct Template {
             stopSequence: "<|im_end|>",
             systemPrompt: systemPrompt
         )
-    }
+    } 
     
     public static func alpaca(_ systemPrompt: String? = nil) -> Template {
         return Template(
@@ -565,8 +565,8 @@ public struct Template {
             prefix: "<|begin_of_text|>",
             system: ("<|start_header_id|>system<|end_header_id|>", "<|eot_id|>"),
             user: ("<|start_header_id|>user<|end_header_id|>", "<|eot_id|>"),
-            bot: ("<|start_header_id|>assistant<|end_header_id|>", "<|eot_id|>"),
-            stopSequence: "<|eot_id|>",
+            bot: ("<|start_header_id|>assistant<|end_header_id|>", "<|<|eot_id|>"),
+            stopSequence: "<|<|eot_id|>",
             systemPrompt: systemPrompt,
             shouldDropLast: true
         )
