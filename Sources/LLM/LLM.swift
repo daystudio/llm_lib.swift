@@ -538,6 +538,16 @@ public struct Template {
         )
     } 
     
+    public static func codegemma(_ systemPrompt: String? = nil) -> Template {
+        return Template(
+            system: ("<|im_start|>system\n", "|im_end|>\n"),
+            user: ("<|im_start|>user\n", "|im_end|>\n"),
+            bot: ("<|im_start|>assistant\n", "|im_end|>\n"),
+            stopSequence: "|im_end|>",
+            systemPrompt: systemPrompt
+        )
+    } 
+
     public static func alpaca(_ systemPrompt: String? = nil) -> Template {
         return Template(
             system: ("", "\n\n"),
@@ -565,8 +575,8 @@ public struct Template {
             prefix: "<|begin_of_text|>",
             system: ("<|start_header_id|>system<|end_header_id|>", "<|eot_id|>"),
             user: ("<|start_header_id|>user<|end_header_id|>", "<|eot_id|>"),
-            bot: ("<|start_header_id|>assistant<|end_header_id|>", "<|<|eot_id|>"),
-            stopSequence: "<|<|eot_id|>",
+            bot: ("<|im_start|>assistant\n", "<|<|eot_id|>assistant\n"),
+            stopSequence: "<|<|eot_id|>\n",
             systemPrompt: systemPrompt,
             shouldDropLast: true
         )
