@@ -576,7 +576,7 @@ public struct Template {
             system: ("<|start_header_id|>system<|end_header_id|>", "<|eot_id|>"),
             user: ("<|start_header_id|>user<|end_header_id|>", "<|eot_id|>"),
             bot: ("<|start_header_id|>assistant<|end_header_id|>", "<|eot_id|>"),
-            stopSequence: "<|eot_id|>\n",
+            stopSequence: "<|end_of_text|>",
             systemPrompt: systemPrompt,
             shouldDropLast: true
         )
