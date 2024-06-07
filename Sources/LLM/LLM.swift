@@ -268,6 +268,7 @@ open class LLM: ObservableObject {
         }
         guard token != model.endToken else { return false }
         var word = decode(token)
+        print("word=\(word)")
         guard let stopSequence else { output.yield(word); return true }
         var found = 0 < saved.stopSequenceEndIndex
         var letters: [CChar] = []
