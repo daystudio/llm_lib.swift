@@ -575,7 +575,7 @@ public struct Template {
             prefix: "<|begin_of_text|>",
             system: ("<|start_header_id|>system<|end_header_id|>", "<|eot_id|>"),
             user: ("<|start_header_id|>user<|end_header_id|>", "<|eot_id|>"),
-            bot: ("<|im_start|>assistant\n", "<|<|eot_id|>assistant\n"),
+            bot: ("<|start_header_id|>assistant<|end_header_id|>", "<|eot_id|>"),
             stopSequence: "<|<|eot_id|>\n",
             systemPrompt: systemPrompt,
             shouldDropLast: true
