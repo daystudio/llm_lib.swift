@@ -399,7 +399,7 @@ extension Model {
         if actualLength < 0 {
             bufferLength = -actualLength
             buffer = .init(repeating: 0, count: bufferLength)
-            llama_token_to_piece(self, token, &buffer, Int32(bufferLength), false)
+            llama_token_to_piece(self, token, &buffer, Int32(bufferLength),0,false)
         } else {
             buffer.removeLast(bufferLength - actualLength)
         }
