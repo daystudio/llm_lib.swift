@@ -394,7 +394,7 @@ extension Model {
     public func decode(_ token: Token, with multibyteCharacter: inout [CUnsignedChar]) -> String {
         var bufferLength:Int = 16
         var buffer: [CChar] = .init(repeating: 0, count: bufferLength)
-        let actualLength:Int = Int(llama_token_to_piece(self, token, &buffer, Int32(bufferLength), false))
+        let actualLength:Int = Int(llama_token_to_piece(self, token, &buffer, Int32(bufferLength), 0, false))
         guard 0 != actualLength else { return "" }
         if actualLength < 0 {
             bufferLength = -actualLength
