@@ -18,7 +18,7 @@ let package = Package(
             targets: ["LLM"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/ggerganov/llama.cpp/", branch: "master"),
+        .package(url: "https://github.com/ggerganov/llama.cpp/", revision: "f4444d992c16b6b9442f4770c7c3a10b19a08343"),
         .package(url: "https://github.com/kishikawakatsumi/swift-power-assert", from: "0.12.0"),
     ],
     targets: [
